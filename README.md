@@ -1,6 +1,8 @@
-# TestApp
+# Submit Reactive Forms & Error Handling App
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
+
+Check the article describing this project at [medium.com](https://medium.com). 
 
 ## Development server
 
