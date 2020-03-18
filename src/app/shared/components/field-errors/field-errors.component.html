@@ -1,0 +1,37 @@
+<span *ngIf="showErrors">
+    <ng-container *ngIf="hasError(error.REQUIRED)">
+        {{msg(error.REQUIRED)}}
+    </ng-container>
+    <ng-container *ngIf="hasError(error.MAX_LENGTH)">
+        {{msg(error.MAX_LENGTH, [{replace: ':field:', with: label},
+        {replace: ':n:', with: getError(error.MAX_LENGTH, 'requiredLength')}])}}
+    </ng-container>
+    <ng-container *ngIf="hasError(error.MIN_LENGTH)">
+        {{msg(error.MIN_LENGTH, [{replace: ':field:', with: label},
+        {replace: ':n:', with: getError(error.MIN_LENGTH, 'requiredLength')}])}}
+    </ng-container>
+    <ng-container *ngIf="hasError(error.MAX)">
+        {{msg(error.MAX, [{replace: ':field:', with: label}, {
+        replace: ':n:',
+        with: getError(error.MAX, error.MAX)
+    }])}}
+    </ng-container>
+    <ng-container *ngIf="hasError(error.MIN)">
+        {{msg(error.MIN, [{replace: ':field:', with: label}, {
+        replace: ':n:',
+        with: getError(error.MIN, error.MIN)
+    }])}}
+    </ng-container>
+    <ng-container *ngIf="hasError(error.DIGITS)">
+        {{msg(error.DIGITS)}}
+    </ng-container>
+    <ng-container *ngIf="hasError(error.EMAIL)">
+        {{msg(error.EMAIL)}}
+    </ng-container>
+    <ng-container *ngIf="hasError(error.EMAIL_REGISTERED)">
+        {{msg(error.EMAIL_REGISTERED)}}
+    </ng-container>
+    <ng-container *ngIf="hasError(error.SERVER_ERROR)">
+        {{getError(error.SERVER_ERROR)}}
+    </ng-container>
+</span>

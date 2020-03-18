@@ -1,0 +1,23 @@
+<div>
+    <h2>1) Using ngForm directive</h2><br>
+    <form [formGroup]="form" #ngForm="ngForm" (ngSubmit)="submit(ngForm)">
+        <label for="name">Name*</label><br>
+        <input id="name" name="name" type="text" formControlName="name"/>
+        <ng-container *ngIf="ngForm.submitted && form.get('name').invalid">
+            <br>
+            <span *ngIf="form.get('name').hasError('required')" class="field-error">Required field.</span>
+        </ng-container>
+        <br><br>
+
+        <label for="email">Email*</label><br>
+        <input id="email" name="email" formControlName="email"/>
+        <ng-container *ngIf="ngForm.submitted && form.get('email').invalid">
+            <br>
+            <span *ngIf="form.get('email').hasError('required')" class="field-error">Required field.</span>
+            <span *ngIf="form.get('email').hasError('email')" class="field-error">Email is invalid.</span>
+        </ng-container>
+        <br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>

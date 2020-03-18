@@ -1,0 +1,16 @@
+<div>
+    <h2>3) Using our custom submission form</h2><br>
+    <app-submit-form [formGroup]="form" (onSubmit)="submit()">
+        <label for="name">Name*</label><br>
+        <input id="name" name="name" type="text" formControlName="name"/>
+        <app-field-errors [control]="form.get('name')" [label]="'Name'"></app-field-errors>
+        <br><br>
+
+        <label for="email">Email*</label><br>
+        <input id="email" name="email" formControlName="email"/>
+        <app-field-errors [control]="form.get('email')" [label]="'Email'"></app-field-errors>
+        <br><br>
+
+        <button type="submit">Submit</button>
+    </app-submit-form>
+</div>
