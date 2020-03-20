@@ -19,7 +19,7 @@ export class SubmitFormComponent {
     /**
      * Html form element reference
      */
-    @ViewChild('formElement') formElement: ElementRef<HTMLFormElement>;
+    @ViewChild('formElement', { static: true }) formElement: ElementRef<HTMLFormElement>;
 
     /**
      * Event fired when form is submitted
