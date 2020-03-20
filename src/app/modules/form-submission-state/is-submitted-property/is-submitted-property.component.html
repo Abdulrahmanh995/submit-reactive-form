@@ -1,6 +1,6 @@
 <div>
     <h2>2) Using custom isSubmitted property</h2><br>
-    <form [formGroup]="form" (ngSubmit)="submit(ngForm)">
+    <form [formGroup]="form" (ngSubmit)="submit()">
         <label for="name">Name*</label><br>
         <input id="name" name="name" type="text" formControlName="name"/>
         <ng-container *ngIf="isSubmitted && form.get('name').invalid">
